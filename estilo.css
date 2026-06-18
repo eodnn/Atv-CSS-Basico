@@ -22,7 +22,8 @@
    ---------------------------------------------------------- */
 
 body {
-
+background-color: rgb(141, 216, 235);
+text-align: center;
 }
 
 
@@ -32,15 +33,15 @@ body {
    ---------------------------------------------------------- */
 
 #cabecalho {
-
+background: rgb(255, 255, 255);
 }
 
 #nome-personagem {
-
+background: rgb(0, 255, 255);
 }
 
 #titulo-personagem {
-
+background: aqua;
 }
 
 
@@ -50,7 +51,7 @@ body {
    ---------------------------------------------------------- */
 
 #conteudo-principal {
-
+background: rgb(53, 142, 194);
 }
 
 
@@ -68,15 +69,20 @@ body {
 }
 
 #imagem-personagem {
-
+border: 20px solid #000000; 
+    background-color: #ffffff; 
+    width: 300px; 
+    height: 300px;
+    object-fit: cover;
 }
 
 .legenda {
-
+font: arial, sans-serif;
+font-size: small;
 }
 
 #bloco-descricao {
-
+fonte
 }
 
 
@@ -146,11 +152,17 @@ body {
 
 /* Cada card de habilidade */
 .card-habilidade {
-
+border-color: aqua;
+css-border: aqua
 }
 
 .imagem-habilidade {
-
+border: 4px solid #000000; 
+    border-radius: 8px; 
+    padding: 5px; 
+    background-color: #ffffff; 
+    height: 150px;
+    object-fit: cover; /
 }
 
 .info-habilidade {
