@@ -1,246 +1,289 @@
 /* ============================================================
    ATIVIDADE: Estilizando com CSS — Ficha Técnica do Personagem
-   Aluno(a): 
-   Turma: 
-   Data: 
+   Aluno(a): Daniel Victhor 3A
    ============================================================ */
 
-
-/* ============================================================
-   DICA: Como selecionar elementos no CSS
-
-   Por TAG:       h1 { }          (aplica em todos os h1)
-   Por ID:        #nome-id { }    (aplica em UM elemento específico)
-   Por CLASSE:    .nome-classe { }(aplica em vários elementos de uma vez)
-   ============================================================ */
-
+/* ----------------------------------------------------------
+   0. RESET BÁSICO (Boa prática)
+   Remove margens indesejadas e ajusta a caixa dos elementos
+   ---------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* ----------------------------------------------------------
    1. ESTILOS GERAIS DA PÁGINA
-   Aqui você configura o visual padrão do site inteiro.
-   Sugestão: defina a cor de fundo, a fonte padrão e a cor do texto.
    ---------------------------------------------------------- */
-
 body {
-background-color: rgb(141, 216, 235);
-text-align: center;
+    background-color: #e2e8f0; /* Fundo cinza-azulado bem suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
-
 
 /* ----------------------------------------------------------
    2. CABEÇALHO  →  #cabecalho
-   A área do topo com o nome e título do personagem.
    ---------------------------------------------------------- */
-
 #cabecalho {
-background: rgb(255, 255, 255);
+    /* Gradiente laranja inspirado no kimono do Goku */
+    background: linear-gradient(135deg, #FF7300, #FF9900);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #nome-personagem {
-background: rgb(0, 255, 255);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 #titulo-personagem {
-background: aqua;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 10px;
+    opacity: 0.9;
 }
-
 
 /* ----------------------------------------------------------
    3. CONTEÚDO PRINCIPAL  →  #conteudo-principal
-   O bloco que envolve tudo entre o cabeçalho e o rodapé.
    ---------------------------------------------------------- */
-
 #conteudo-principal {
-background: rgb(53, 142, 194);
+    background: #ffffff;
+    max-width: 900px;
+    margin: -30px auto 50px; /* Sobe um pouco o bloco para cima do cabeçalho */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
 }
-
-
-/* ----------------------------------------------------------
-   4. SEÇÃO DE APRESENTAÇÃO  →  #secao-apresentacao
-   Imagem do personagem + texto de descrição lado a lado.
-   ---------------------------------------------------------- */
-
-#secao-apresentacao {
-
-}
-
-#bloco-imagem {
-
-}
-
-#imagem-personagem {
-border: 20px solid #000000; 
-    background-color: #ffffff; 
-    width: 300px; 
-    height: 300px;
-    object-fit: cover;
-}
-
-.legenda {
-font: arial, sans-serif;
-font-size: small;
-}
-
-#bloco-descricao {
-fonte
-}
-
 
 /* ----------------------------------------------------------
    5. TÍTULOS DE SEÇÃO  →  .titulo-secao
-   Usados em todas as seções da página.
    ---------------------------------------------------------- */
-
 .titulo-secao {
-
+    color: #203B82; /* Azul clássico do Goku */
+    border-bottom: 3px solid #FF7300;
+    padding-bottom: 10px;
+    margin: 40px 0 20px;
+    text-transform: uppercase;
+    font-size: 1.6rem;
 }
 
+/* ----------------------------------------------------------
+   4. SEÇÃO DE APRESENTAÇÃO  →  #secao-apresentacao
+   ---------------------------------------------------------- */
+#secao-apresentacao {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+}
+
+#bloco-imagem {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+#imagem-personagem {
+    border: 6px solid #203B82; 
+    border-radius: 50%; /* Deixa a imagem perfeitamente redonda */
+    width: 280px; 
+    height: 280px;
+    object-fit: cover;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+#imagem-personagem:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.legenda {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+#bloco-descricao {
+    flex: 2;
+    min-width: 300px;
+}
 
 /* ----------------------------------------------------------
    6. TEXTOS DE DESCRIÇÃO  →  .texto-descricao
-   Parágrafos dentro do bloco de descrição do personagem.
    ---------------------------------------------------------- */
-
 .texto-descricao {
-
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 1.05rem;
 }
-
 
 /* ----------------------------------------------------------
    7. SEÇÃO DE ATRIBUTOS  →  #secao-atributos
-   A grade com os cards de atributo (ataque, defesa, etc.).
    ---------------------------------------------------------- */
-
-#secao-atributos {
-
-}
-
 #grade-atributos {
-
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
 }
 
-/* Cada card de atributo individualmente */
 .card-atributo {
+    background: #f8f9fa;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 10px;
+    text-align: center;
+    transition: all 0.2s;
+}
 
+.card-atributo:hover {
+    border-color: #FF7300;
+    background: #fff5eb;
+    transform: translateY(-5px);
 }
 
 .icone-atributo {
-
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .nome-atributo {
-
+    display: block;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
 .valor-atributo {
-
+    display: block;
+    font-size: 1.5rem;
+    color: #203B82;
+    font-weight: 900;
+    margin-top: 5px;
 }
-
 
 /* ----------------------------------------------------------
    8. SEÇÃO DE HABILIDADES  →  #secao-habilidades
-   Lista de habilidades com imagem e descrição.
    ---------------------------------------------------------- */
-
-#secao-habilidades {
-
-}
-
 #lista-habilidades {
-
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Cada card de habilidade */
 .card-habilidade {
-border-color: aqua;
-css-border: aqua
+    display: flex;
+    gap: 25px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-left: 6px solid #FF7300;
+    border-radius: 8px;
+    padding: 20px;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap;
 }
 
 .imagem-habilidade {
-border: 4px solid #000000; 
-    border-radius: 8px; 
-    padding: 5px; 
-    background-color: #ffffff; 
-    height: 150px;
-    object-fit: cover; /
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ddd;
 }
 
 .info-habilidade {
-
+    flex: 1;
+    min-width: 250px;
 }
 
 .nome-habilidade {
-
+    color: #203B82;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
 }
 
 .tipo-habilidade {
-
+    display: inline-block;
+    background: #FF7300;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .descricao-habilidade {
-
+    font-size: 0.95rem;
+    color: #444;
 }
-
 
 /* ----------------------------------------------------------
    9. SEÇÃO DE CURIOSIDADES  →  #secao-curiosidades
-   Lista com fatos sobre o personagem.
    ---------------------------------------------------------- */
-
-#secao-curiosidades {
-
-}
-
 #lista-curiosidades {
-
+    padding-left: 20px;
 }
 
 .item-curiosidade {
-
+    margin-bottom: 15px;
+    font-size: 1.05rem;
 }
 
+.item-curiosidade::marker {
+    color: #FF7300;
+    font-size: 1.2rem;
+}
 
 /* ----------------------------------------------------------
    10. SEÇÃO DE FRASES  →  #secao-frases
-   A frase marcante do personagem em destaque.
    ---------------------------------------------------------- */
-
 #secao-frases {
-
+    background: #fff5eb;
+    padding: 40px 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 50px;
+    border: 2px dashed #FF7300;
 }
 
 #frase-personagem {
-
+    font-size: 2.2rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #203B82;
+    margin-bottom: 15px;
 }
 
 #autor-frase {
-
+    font-size: 1.2rem;
+    color: #FF7300;
+    font-weight: bold;
+    text-transform: uppercase;
 }
-
 
 /* ----------------------------------------------------------
    11. RODAPÉ  →  #rodape
-   Área inferior com os créditos da ficha.
    ---------------------------------------------------------- */
-
 #rodape {
-
-}
-
-#creditos {
-
+    background: #1a202c;
+    color: #a0aec0;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
 }
 
 #nome-aluno {
-
+    color: #FF7300;
+    font-weight: bold;
 }
-
-#ano {
-
-}
-
-
-/* ----------------------------------------------------------
-   ÁREA LIVRE
-   Quer adicionar mais estilos? Use este espaço!
-   ---------------------------------------------------------- */
